@@ -1,0 +1,43 @@
+
+
+<section id="viewReceiptSection">
+    <div id="viewReceipt">
+        <h2>receipt</h2>
+        <table>
+            <tr>
+                <td>full names </td>
+                <td><%= rcpt.childsName %></td>
+            </tr>
+            <tr>
+                <td>total amount </td>
+                <td><%= rcpt.totalAmount %> </td>
+            </tr>
+            <tr>
+                <td>amount paid </td>
+                <td><%= rcpt.amountPaying %></td>
+            </tr>
+            <tr>
+                <td>amount</td>
+                <td><%= rcpt.amountOwing %></td>
+            </tr>
+            <tr>
+                <td>P.D.S student ID </td>
+                <td><%= rcpt.studentID %></td>
+            </tr>
+        </table>
+                   
+            </div>
+        <div id="viewPrev">
+            <a href="/users/ReceiptPage">Back</a>
+            <button>print</button>
+        </div>
+</section>
+
+<script>
+    let btn = document.querySelector('button')
+
+    
+    btn.onclick = function(e){
+        window.print()
+    }
+</script>

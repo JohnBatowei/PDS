@@ -1,0 +1,124 @@
+<%- include('./partials/head.ejs') %> 
+<% if(successMessage.length > 0){ %> 
+    <div id="successMessage"> <%= successMessage %> </div>
+<% } %> 
+<section id="adminSection">
+   
+    <div class="main" id="main">
+        <aside>
+             <h1><%= message %> dashboard</h1>
+             <form action="/admin/logout" method="POST">
+                <button>logout</button>
+             </form>
+        </aside>
+
+     <h2>all student records</h2>
+
+        <div id="studentDetails">
+            <h3 id="regStd">registered students</h3>
+            <h3 id="stdRecpt">students payment receipts</h3>
+        </div>
+
+    <div id="stdReg">
+          <% if(result.length > 0){ %> 
+            <% result.forEach((details,index)=>{ %>
+            
+       <div class="flex" id="flex">
+             <div class="student" id="student">
+
+                <table border="1">
+                    <tr>
+                        <th id="hed">S/N</th>
+                        <th id="hed">surname</th>
+                        <th id="hed">child name</th>
+                        <th id="hed">phone Number</th>
+                        <th id="hed">student ID</th>
+                    </tr>
+                    <tr>
+                        <th><%= index %> </th>
+                        <th> <%= details.surname%></th>
+                        <th><%= details.childsname%></th>
+                        <th><%= details.phonenumber%></th>
+                        <th><%= details.studentID%></th>
+                    </tr>
+                
+                </table>
+                <div class="views" id="views">
+                 <a href="/users/<%= details._id %> "> view</a>
+                    <a href="/users/<%= details.id %>/edit ">edit</a>
+
+                <!-- <//%- include('../views/partials/deleteForm.ejs', 
+                        {url: `/studentID/${details._id}`}) %>  -->
+                    <!-- <form method="POST" action="/studentID/<%= details._id %>?_method=DELETE">
+                        <button>delete</button>
+                    </form> -->
+               </div>
+            </div>
+       </div>
+
+            <% }) %>
+            <% }else{ %>  
+                <p> no record found </p>
+                <% } %> 
+        
+    </div>
+    </div>
+
+
+   <div class="recpt" id="recpt">
+     <% if(receipt.length > 0){ %> 
+    <% receipt.forEach((recpt,index)=>{ %>
+        <div class="mainReceipt" id="mainReceipt">
+            <div class="topRecipt">
+                <p><%= index %> </p>
+                <div class="recptDetails" id="recptDetails">
+                    <h3>Name : <%= recpt.childsName %>, </h3>
+                    <h3>total Amount : <%= recpt.totalAmount %> ,</h3>
+                    <h3>Amount paid : <%= recpt.amountPaying %>, </h3>
+                    <h3>Amount <%= recpt.amountOwing %> ,</h3>
+                    <h3>PDS Student ID : <%= recpt.studentID %> </h3>
+                </div>
+            </div>
+
+                <div class="views" id="views">
+                 <a href="/users/<%= recpt._id %> "> view</a>
+                    <!-- <a href="/studentID/<//%= recpt.id %>/edits ">edit</a> -->
+
+                <!-- <//%- include('../views/partials/deleteForm.ejs', 
+                        {url: `/studentID/${details._id}`}) %>  -->
+
+                    <!-- <form method="POST" action="/studentID/</%= recpt._id %>?_method=DELETE">
+                        <button>delete</button>
+                    </form> -->
+               </div>
+        </div>
+        
+        <% }) %> 
+
+    <% }else{ %> 
+        <h2>No Receipt record</h2>
+        <% } %> 
+   </div>
+</section>
+
+
+<%- include('./partials/footer.ejs') %>
+<script>
+  let flex = document.getElementById('stdReg')
+  let receipt = document.getElementById('recpt')
+let stdntRecpt = document.getElementById('stdRecpt')
+let regStd = document.getElementById('regStd')
+
+stdntRecpt.onclick = function(){
+receipt.style.display = 'block'
+flex.style.display = 'none'
+regStd.style.background = 'rgb(5, 212, 202)'
+stdntRecpt.style.background = 'orange'
+}
+regStd.onclick = function(){
+flex.style.display = 'block'
+regStd.style.background = 'orange'
+receipt.style.display = 'none'
+stdntRecpt.style.background = 'rgb(5, 212, 202)'
+}
+</script> 

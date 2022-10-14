@@ -1,0 +1,59 @@
+<% if(successMessage.length > 0){ %> 
+  <div id="successMessage"> <%= successMessage %> </div>
+  <% } %> 
+  <h2 style="color: yellow;"><%= title %></h2>
+
+<!-- DataTables Example -->
+<div class="card mb-3" id="receipt-container">
+  <div class="card-header" id="admin-table-head">
+    <i class="fas fa-table"></i>
+   Student Receipts Records</div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>Name</th>
+            <th>Total Amount</th>
+            <th>Amount Paid</th>
+            <th>Amount Owing</th>
+            <th>PDS ID</th>
+            <th>view</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>S/N</th>
+            <th>Name</th>
+            <th>Total Amount</th>
+            <th>Amount Paid</th>
+            <th>Amount Owing</th>
+            <th>PDS ID</th>
+            <th>view</th>
+          </tr>
+        </tfoot>
+        <tbody>
+           <% if(receipt.length > 0){ %> 
+             <% receipt.forEach((recpt,index)=>{ %>
+          <tr>
+            <td><%= index %> </td>
+            <td><%= recpt.childsName %></td>
+            <td><%= recpt.totalAmount %></td>
+            <td><%= recpt.amountPaying %></td>
+            <td><%= recpt.amountOwing %></td>
+            <td><%= recpt.studentID %></td>
+            <td><a href="/users/<%= recpt._id %> "> view</a></td>   
+          </tr>
+         
+            <% }) %> 
+
+    <% }else{ %> 
+        <h2>No Receipt record</h2>
+        <% } %>  
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+</div>

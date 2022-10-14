@@ -1,0 +1,36 @@
+
+
+
+<div id="editRecpt">
+    
+<h2>Edit receipt</h2>
+<form method="POST" action="/studentID/<%= recpt._id %>?_method=PUT">
+
+        <div id="mainRecpt">
+            <div class="surname same">
+                        <label for="surname">Full Name : </label>
+                        <input type="text" name="childsName" id="surname" value="<%= recpt.childsName %>">
+                    </div>
+                    <div class="firstname same">
+                        <label for="firstname">total Amount : </label>
+                        <input type="text" name="totalAmount" id="firstname" value="<%= recpt.totalAmount %>">
+                    </div>
+                    <div class="othernames same">
+                        <label for="othernames">amount paid : </label>
+                        <input type="text" name="amountPaying" id="othernames" value="<%= recpt.amountPaying %>">
+                    </div>
+                    <div class="othernames same">
+                        <label for="othernames">amount </label>
+                        <input type="text" name="amountOwing" id="othernames" value="<%= recpt.amountOwing %>">
+                    </div>
+        </div>
+ 
+            <div class="submit">
+                <a href="/admin/ReceiptPage">cancel</a>
+                <button>update</button>
+            </div>
+</form>
+
+</div>
+
+

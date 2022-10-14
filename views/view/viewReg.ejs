@@ -1,0 +1,84 @@
+
+
+<section id="viewRegSection">
+    <div id="viewReg">
+        <table>
+            <tr>
+                <td>surName </td>
+                <td><%= details.surname %></td>
+            </tr>
+            <tr>
+                <td>first Name </td>
+                <td><%= details.firstname %> </td>
+            </tr>
+            <tr>
+                <td>other Names </td>
+                <td><%= details.othernames %></td>
+            </tr>
+            <tr>
+                <td>occupation</td>
+                <td><%= details.occupation %></td>
+            </tr>
+            <tr>
+                <td>income per montd </td>
+                <td><%= details.incomePmonth %></td>
+            </tr>
+            <tr>
+                <td>address</td>
+                <td><%= details.address %> </td>
+            </tr>
+            <tr>
+                <td>phone number</td>
+                <td><%= details.phonenumber %></td>
+            </tr>
+            <tr>
+                <td>relationship to child</td>
+                <td><%= details.relationshiptochild %></td>
+            </tr>
+            <tr>
+                <td>childs name</td>
+                <td><%= details.childsname %></td>
+            </tr>
+            <tr>
+                <td>child age</td>
+                <td><%= details.childage %></td>
+            </tr>
+            <tr>
+                <td>gender</td>
+                <td><%= details.gender %></td>
+            </tr>
+            <tr>
+                <td>child class</td>
+                <td><%= details.childclass %></td>
+            </tr>
+            <tr>
+                <td>child former school</td>
+                <td><%= details.childFschool %></td>
+            </tr>
+            <tr>
+                <td>child Former class </td>
+                <td><%= details.childsFclass %></td>
+            </tr>
+            <tr>
+                <td>student P.D.S ID</td>
+                <td><%= details.studentID %></td>
+            </tr>
+        </table>
+                   
+            </div>
+        <div id="viewPrev">
+            <a href="/admin/dashboard">Back</a>
+            <button>print</button>
+        </div>
+</section>
+
+
+
+<script>
+    let btn = document.querySelector('button')
+
+    
+    btn.onclick = function(e){
+        window.print()
+    }
+</script>

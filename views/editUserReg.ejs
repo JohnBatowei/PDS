@@ -1,0 +1,80 @@
+
+
+<div id="editReg">
+    
+<h2>Edit student</h2>
+<form method="POST" action="/users/<%= details._id %>?_method=PUT">
+
+                     <div class="surname same">
+                        <label for="surname">surname</label>
+                        <input type="text" name="surname" id="surname" value="<%= details.surname %>">
+                    </div>
+                    <div class="firstname same">
+                        <label for="firstname">first name</label>
+                        <input type="text" name="firstname" id="firstname" value="<%= details.firstname %>">
+                    </div>
+                    <div class="othernames same">
+                        <label for="othernames">other names</label>
+                        <input type="text" name="othernames" id="othernames" value="<%= details.othernames%>">
+                    </div>
+                    <div class="occupation same">
+                        <label for="occupation">occupation</label>
+                        <input type="text" name="occupation" id="occupation" value="<%= details.occupation %>">
+                    </div>
+                    <div class="incomePmonth same">
+                        <label for="incomePmonth">income per month</label>
+                        <input type="text" name="incomePmonth" id="incomePmonth" value="<%= details.incomePmonth %>">
+                    </div>
+                    <div class="address same">
+                        <label for="address">address</label>
+                        <input type="text" name="address" id="address" value="<%= details.address %>">
+                    </div>
+                    <div class="phonenumber same">
+                        <label for="phonenumber">phone number</label>
+                        <input type="text" name="phonenumber" id="phonenumber" value="<%= details.phonenumber %>">
+                    </div>
+                    <div class="relationshiptochild same">
+                        <label for="relationshiptochild">relationship to child</label>
+                        <input type="text" name="relationshiptochild" id="relationshiptochild" value="<%= details.relationshiptochild %>">
+                    </div>
+                    <div class="childsname same">
+                        <label for="childsname">childs name</label>
+                        <input type="text" name="childsname" id="childsname" value="<%= details.childsname %>">
+                    </div>
+                    <div class="ageGen same">
+                       <div class="childage">
+                         <label for="childage">child age :</label>
+                        <input type="text" name="childage" id="childage" value="<%= details.childage %>">
+                       </div>
+
+                        <div class="gender" id="genders">
+                        <label>gender :</label>
+                        <input type="text" name="gender" id="gender" value="<%= details.gender %>">
+                        </div>
+                    </div>
+                    
+                    <div class="childclass same">
+                        <label for="childclass">child's class</label>
+                        <input type="text" name="childclass" id="childclass" value="<%= details.childclass %>">
+                    </div>
+                    <div class="childFschool same">
+                        <label for="childFschool">child's former school</label>
+                        <input type="text" name="childFschool" id="childFschool" value="<%= details.childFschool %>">
+                    </div>
+                    <div class="childsFclass same">
+                        <label for="childsFclass">childs former class</label>
+                        <input type="text" name="childsFclass" id="childsFclass" value="<%= details.childsFclass %>">
+                    </div>
+                    <div class="childsFclass same">
+                        <label for="childsFclass">Student PDS ID</label>
+                        <input type="text" name="studentID" id="childsFclass" value="<%= details.studentID%>">
+                    </div>
+ 
+   <div class="submit">
+     <a href="/users/dashboard">cancel</a>
+    <button>update</button>
+   </div>
+</form>
+
+
+</div>
